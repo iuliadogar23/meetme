@@ -6,7 +6,7 @@ import com.project.meetme.model.User;
 
 public class UserRepository {
 
-    private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 //
 //    private void getAll() {
 //        databaseReference = FirebaseDatabase.getInstance().getReference("users");
@@ -28,9 +28,8 @@ public class UserRepository {
 //        });
 //    }
 
-    public void create(String id, String name, String email, String password, Long phone) {
-        User user = new User(id, name, email, password, phone);
-        databaseReference.child(id).setValue(user);
+    public void create(String name, String email, String password, Long phone) {
+        User user = new User(name, email, password, phone);
+        databaseReference.setValue(user);
     }
-
 }
