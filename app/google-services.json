@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "430448632910",
+    "firebase_url": "https://meetme-5f365.firebaseio.com",
+    "project_id": "meetme-5f365",
+    "storage_bucket": "meetme-5f365.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430448632910:android:581e6bae61fcf1d5064f1f",
+        "android_client_info": {
+          "package_name": "com.project.meetme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430448632910-q3c5kmhkp1g3tdoig40rjjr87bflqruo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZhIqIYoZ2DN74RQsXmHTiDmoeNoVhL_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430448632910-q3c5kmhkp1g3tdoig40rjjr87bflqruo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
