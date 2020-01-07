@@ -2,11 +2,10 @@ package com.project.meetme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.firebase.database.FirebaseDatabase;
-import com.project.meetme.model.User;
-import com.project.meetme.repos.UserRepository;
+import com.project.meetme.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        UserRepository userRepository = new UserRepository(database);
-        userRepository.getAll();
-//        userRepository.create("ana", "doggy@gmail.com", "test", 07L);
+//
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        UserRepository userRepository = new UserRepository(database);
+//        userRepository.getAll();
     }
 }
