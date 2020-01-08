@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.LoginActivity">
+    tools:context=".view.RegisterActivity">
 
     <EditText
-        android:id="@+id/etEmailLogin"
+        android:id="@+id/etEmailRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -16,7 +16,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/etPasswordLogin"
+        android:id="@+id/etPasswordRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -24,9 +24,10 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="Login" />
+
 </LinearLayout>
