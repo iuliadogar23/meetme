@@ -27,7 +27,6 @@ public class RegisterActivity extends AppCompatActivity {
     Button register;
 
     private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference;
     private UserRepository userRepository;
 
     @Override
