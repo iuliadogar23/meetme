@@ -16,6 +16,22 @@
         android:inputType="textEmailAddress" />
 
     <EditText
+        android:id="@+id/etNameRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="First name, last name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etPhoneRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Phone number"
+        android:inputType="text" />
+
+    <EditText
         android:id="@+id/etPasswordRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,11 +39,19 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/etConfirmPasswordRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Confirm password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="Login" />
+        android:text="Register" />
 
 </LinearLayout>

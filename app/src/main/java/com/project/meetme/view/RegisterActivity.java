@@ -23,7 +23,10 @@ import com.project.meetme.repos.UserRepository;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText etEmail;
+    EditText etName;
+    EditText etPhone;
     EditText etPassword;
+    EditText etConfirmPassword;
     Button register;
 
     private FirebaseAuth firebaseAuth;
@@ -37,7 +40,10 @@ public class RegisterActivity extends AppCompatActivity {
         userRepository = new UserRepository();
 
         etEmail = findViewById(R.id.etEmailRegister);
+        etName = findViewById(R.id.etNameRegister);
+        etPhone = findViewById(R.id.etPhoneRegister);
         etPassword = findViewById(R.id.etPasswordRegister);
+        etConfirmPassword = findViewById(R.id.etConfirmPasswordRegister);
         register = findViewById(R.id.buttonRegister);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -46,14 +52,18 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String email = etEmail.getText().toString();
+                final String name = etName.getText().toString();
+                final String phoneStr = etPhone.getText().toString();
+                final Long phone = Long.parseLong(phoneStr);
                 final String password = etPassword.getText().toString();
+                final String confirmPassword = etConfirmPassword.getText().toString();
 
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(
                         new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    User user = new User(null, email, password, null);
+                                if (task.isSuccessful() && password.equals(confirmPassword)) {
+                                    User user = new User(name, email, password, phone);
                                     userRepository.create(user);
                                     startActivity(new Intent(RegisterActivity.this, ProfileActivity.class));
                                 } else {

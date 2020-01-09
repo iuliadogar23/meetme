@@ -1,18 +1,37 @@
 package com.project.meetme.model;
 
-import java.sql.Timestamp;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Meetings {
+import java.sql.Timestamp;
+import java.util.ArrayList;
+
+public class Meeting {
     private Integer id;
     private String title;
     private String description;
     private Timestamp date;
     private String location; // Location type?
 
-    public Meetings() {
+    public Meeting(JSONObject object) {
+        try {
+            this.title = object.getString("title");
+            this.description = object.getString("description");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
-    public Meetings(String title, String description, Timestamp date, String location) {
+    public Meeting() {
+    }
+
+    public Meeting(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+    public Meeting(String title, String description, Timestamp date, String location) {
         this.title = title;
         this.description = description;
         this.date = date;
@@ -57,5 +76,17 @@ public class Meetings {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public static ArrayList<Meeting> fromJson(JSONArray jsonObjects) {
+        ArrayList<Meeting> meetings = new ArrayList<Meeting>();
+        for (int i = 0; i < jsonObjects.length(); i++) {
+            try {
+                meetings.add(new Meeting(jsonObjects.getJSONObject(i)));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return meetings;
     }
 }

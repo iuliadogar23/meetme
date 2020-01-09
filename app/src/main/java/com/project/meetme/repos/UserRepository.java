@@ -9,11 +9,9 @@ import com.project.meetme.model.User;
 public class UserRepository {
 
     private DatabaseReference databaseReference;
-    private FirebaseAuth firebaseAuth;
 
     public UserRepository() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
         this.databaseReference = database.getReference("users");
     }
 
