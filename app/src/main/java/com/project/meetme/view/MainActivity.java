@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         login = findViewById(R.id.loginButton);
         register = findViewById(R.id.registerButton);
 

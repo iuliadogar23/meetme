@@ -1,27 +1,13 @@
 package com.project.meetme.model;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.sql.Timestamp;
-import java.util.ArrayList;
 
 public class Meeting {
     private Integer id;
     private String title;
     private String description;
-    private Timestamp date;
-    private String location; // Location type?
-
-    public Meeting(JSONObject object) {
-        try {
-            this.title = object.getString("title");
-            this.description = object.getString("description");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
+    private Timestamp datetime;
+    private String location;
 
     public Meeting() {
     }
@@ -31,10 +17,10 @@ public class Meeting {
         this.description = description;
     }
 
-    public Meeting(String title, String description, Timestamp date, String location) {
+    public Meeting(String title, String description, Timestamp datetime, String location) {
         this.title = title;
         this.description = description;
-        this.date = date;
+        this.datetime = datetime;
         this.location = location;
     }
 
@@ -63,11 +49,11 @@ public class Meeting {
     }
 
     public Timestamp getDate() {
-        return date;
+        return datetime;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setDate(Timestamp datetime) {
+        this.datetime = datetime;
     }
 
     public String getLocation() {
@@ -76,17 +62,5 @@ public class Meeting {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public static ArrayList<Meeting> fromJson(JSONArray jsonObjects) {
-        ArrayList<Meeting> meetings = new ArrayList<Meeting>();
-        for (int i = 0; i < jsonObjects.length(); i++) {
-            try {
-                meetings.add(new Meeting(jsonObjects.getJSONObject(i)));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        return meetings;
     }
 }

@@ -16,7 +16,7 @@ public class UserRepository {
     }
 
     public void create(User user) {
-        databaseReference.child("id").setValue(user);
+        databaseReference.push().setValue(user);
     }
 
     public void updateCurrent(User user) {

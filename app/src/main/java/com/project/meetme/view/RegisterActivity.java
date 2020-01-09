@@ -14,8 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.project.meetme.R;
 import com.project.meetme.model.User;
 import com.project.meetme.repos.UserRepository;
@@ -65,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful() && password.equals(confirmPassword)) {
                                     User user = new User(name, email, password, phone);
                                     userRepository.create(user);
-                                    startActivity(new Intent(RegisterActivity.this, ProfileActivity.class));
+                                    startActivity(new Intent(RegisterActivity.this, MeetingsActivity.class));
                                 } else {
                                     Toast.makeText(RegisterActivity.this, task.getException().getMessage(),
                                             Toast.LENGTH_LONG).show();

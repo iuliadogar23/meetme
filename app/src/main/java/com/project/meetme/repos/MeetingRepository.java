@@ -1,12 +1,8 @@
 package com.project.meetme.repos;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.project.meetme.model.Meeting;
-
-import java.util.ArrayList;
 
 public class MeetingRepository {
 
@@ -22,7 +18,7 @@ public class MeetingRepository {
     }
 
     public void create(Meeting meeting) {
-        databaseReference.child("id").setValue(meeting);
+        databaseReference.push().setValue(meeting);
     }
 
     public void update(Integer id, Meeting meeting) {
