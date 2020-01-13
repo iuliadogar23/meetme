@@ -2,20 +2,25 @@ package com.project.meetme.model;
 
 import java.sql.Timestamp;
 
-public class Meetings {
+public class Meeting {
     private Integer id;
     private String title;
     private String description;
-    private Timestamp date;
-    private String location; // Location type?
+    private Timestamp datetime;
+    private String location;
 
-    public Meetings() {
+    public Meeting() {
     }
 
-    public Meetings(String title, String description, Timestamp date, String location) {
+    public Meeting(String title, String description) {
         this.title = title;
         this.description = description;
-        this.date = date;
+    }
+
+    public Meeting(String title, String description, Timestamp datetime, String location) {
+        this.title = title;
+        this.description = description;
+        this.datetime = datetime;
         this.location = location;
     }
 
@@ -44,11 +49,11 @@ public class Meetings {
     }
 
     public Timestamp getDate() {
-        return date;
+        return datetime;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setDate(Timestamp datetime) {
+        this.datetime = datetime;
     }
 
     public String getLocation() {
