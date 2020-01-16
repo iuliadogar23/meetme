@@ -1,16 +1,16 @@
 package com.project.meetme.model;
 
-public class Friends {
+public class Participant {
     private Integer id;
     private Integer userId;
-    private Integer friendId;
+    private Integer meetingId;
 
-    public Friends() {
+    public Participant() {
     }
 
-    public Friends(Integer userId, Integer friendId) {
+    public Participant(Integer userId, Integer meetingId) {
         this.userId = userId;
-        this.friendId = friendId;
+        this.meetingId = meetingId;
     }
 
     public Integer getId() {
@@ -29,11 +29,11 @@ public class Friends {
         this.userId = userId;
     }
 
-    public Integer getFriendId() {
-        return friendId;
+    public Integer getMeetingId() {
+        return meetingId;
     }
 
-    public void setFriendId(Integer friendId) {
-        this.friendId = friendId;
+    public void setMeetingId(Integer meetingId) {
+        this.meetingId = meetingId;
     }
 }

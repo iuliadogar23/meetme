@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">meetme</string>
+    <string name="title_meeting_list">Meetings</string>
+    <string name="title_meeting_detail">Meeting Detail</string>
+    <string name="create_meeting">create meeting</string>
+    <string name="register">Register</string>
+    <string name="save">Save</string>
+    <string name="location">Location</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
 </resources>
