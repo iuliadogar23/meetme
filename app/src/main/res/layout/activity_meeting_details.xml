@@ -24,15 +24,23 @@
         android:hint="@string/description"
         android:inputType="text" />
 
-    <EditText
-        android:id="@+id/etMtgDatetime"
+    <TextView
+        android:id="@+id/etDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:clickable="true"
-        android:hint="@string/date_and_time"
+        android:hint="select date"
         android:inputType="datetime"
         android:focusable="false" />
+
+    <TextView
+        android:id="@+id/etTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="select time"
+        android:inputType="datetime" />
 
     <EditText
         android:id="@+id/etMtgLocation"

@@ -1,13 +1,28 @@
 package com.project.meetme.model;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
+import java.util.Calendar;
 
-public class Meeting {
+public class Meeting implements Serializable {
     private Integer id;
     private String title;
     private String description;
-    private Timestamp datetime;
+    private Long datetime;
     private String location;
+
+    public String toStringDisplay() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(datetime);
+        return "Title: " + title  +'\n'+
+                "Description: " + description + '\n' +
+                "Date and time: " + calendar.getTime() +'\n'+
+                "Location: " + location + '\n';
+    }
+
+    @Override
+    public String toString() {
+        return title + " at " + location;
+    }
 
     public Meeting() {
     }
@@ -17,7 +32,7 @@ public class Meeting {
         this.description = description;
     }
 
-    public Meeting(String title, String description, Timestamp datetime, String location) {
+    public Meeting(String title, String description, Long datetime, String location) {
         this.title = title;
         this.description = description;
         this.datetime = datetime;
@@ -48,11 +63,11 @@ public class Meeting {
         this.description = description;
     }
 
-    public Timestamp getDate() {
+    public Long getDate() {
         return datetime;
     }
 
-    public void setDate(Timestamp datetime) {
+    public void setDate(Long datetime) {
         this.datetime = datetime;
     }
 

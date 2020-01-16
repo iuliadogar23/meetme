@@ -3,12 +3,14 @@ package com.project.meetme.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ClipData;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +23,6 @@ import com.project.meetme.model.Meeting;
 import com.project.meetme.repos.MeetingRepository;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MeetingsActivity extends AppCompatActivity {
 
@@ -31,9 +32,11 @@ public class MeetingsActivity extends AppCompatActivity {
     Button createMeetingButton;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference("meetings");
-    ArrayList<String> meetings;
-    ArrayAdapter<String> adapter;
-    Meeting meeting = new Meeting();
+    ArrayList<Meeting> meetings;
+    ArrayAdapter<Meeting> adapter;
+    Meeting meeting;
+    CalendarView calendarView;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,22 @@ public class MeetingsActivity extends AppCompatActivity {
         meetings = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, meetings);
 
+        calendarView = (CalendarView) findViewById(R.id.calendarView);
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                startActivity(new Intent(MeetingsActivity.this, MeetingDetailsActivity.class));
+            }
+        });
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                meetings.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     meeting = snapshot.getValue(Meeting.class);
-                    meetings.add(meeting.getTitle());
+                    meetings.add(meeting);
                 }
                 meetingsView.setAdapter(adapter);
             }
@@ -58,6 +71,15 @@ public class MeetingsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+        meetingsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                intent = new Intent(MeetingsActivity.this, DisplayMeetingActivity.class);
+                meeting = meetings.get(position);
+                intent.putExtra("meetingToDisplay", meeting);
+                startActivity(intent);
             }
         });
 

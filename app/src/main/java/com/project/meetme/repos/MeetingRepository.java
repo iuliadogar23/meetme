@@ -4,6 +4,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.project.meetme.model.Meeting;
 
+import java.util.List;
+
 public class MeetingRepository {
 
     private DatabaseReference databaseReference;
@@ -24,5 +26,15 @@ public class MeetingRepository {
     public void update(Integer id, Meeting meeting) {
         String idStr = id.toString();
         databaseReference.child(idStr).setValue(meeting);
+    }
+
+    public Meeting findByName(List<Meeting> meetings, String title)
+    {
+        for (Meeting meeting: meetings)
+        {
+            if (meeting.getTitle().equals(title))
+                return meeting;
+        }
+        return null;
     }
 }
