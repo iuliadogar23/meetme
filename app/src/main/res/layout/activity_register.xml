@@ -29,60 +29,60 @@
             android:id="@+id/etNameRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ae52d4"
+            android:backgroundTint="#ffe0b2"
             android:ems="10"
             android:hint="@string/first_name_last_name"
             android:inputType="textPersonName"
             android:textColor="@android:color/white"
-            android:textColorHint="#ae52d4" />
+            android:textColorHint="#cbae82" />
 
         <!-- Phone Label -->
         <EditText
             android:id="@+id/etPhoneRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ae52d4"
+            android:backgroundTint="#ffe0b2"
             android:ems="10"
             android:hint="@string/phone_number"
             android:inputType="phone"
             android:textColor="@android:color/white"
-            android:textColorHint="#ae52d4" />
+            android:textColorHint="#cbae82" />
 
         <!-- Email Label -->
         <EditText
             android:id="@+id/etEmailRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ae52d4"
+            android:backgroundTint="#ffe0b2"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textColor="@android:color/white"
-            android:textColorHint="#ae52d4" />
+            android:textColorHint="#cbae82" />
 
         <!-- Password Label -->
         <EditText
             android:id="@+id/etPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ae52d4"
+            android:backgroundTint="#ffe0b2"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
-            android:textColorHint="#ae52d4" />
+            android:textColorHint="#cbae82" />
 
         <!-- Password Confirmation Label -->
         <EditText
             android:id="@+id/etConfirmPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#ae52d4"
+            android:backgroundTint="#ffe0b2"
             android:ems="10"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
-            android:textColorHint="#ae52d4" />
+            android:textColorHint="#cbae82" />
 
         <!--    Sign up password -->
         <Button
@@ -90,9 +90,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:background="#ae52d4"
+            android:background="#ffe0b2"
             android:ems="10"
             android:text="@string/sign_up"
-            android:textColor="@android:color/white" />
+            android:textColor="#4a0072" />
     </LinearLayout>
 </ScrollView>
