@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="#4a0072"
     android:fitsSystemWindows="true"
-
     tools:context=".view.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         android:paddingLeft="24dp"
         android:paddingTop="56dp"
@@ -22,27 +21,32 @@
             android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#ae52d4"
             android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColorHint="@android:color/white" />
 
         <!-- Password Label -->
         <EditText
             android:id="@+id/etPasswordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#ae52d4"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColorHint="@android:color/white" />
 
         <!-- Login Button -->
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
             android:layout_marginBottom="24dp"
-            android:background="@android:color/white"
+            android:background="#ae52d4"
             android:padding="12dp"
-            android:text="@string/login" />
+            android:text="@string/login"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/link_signup"
@@ -51,6 +55,7 @@
             android:layout_marginTop="50dp"
             android:gravity="center"
             android:text="@string/no_account_yet_create_one"
+            android:textColor="#ae52d4"
             android:textSize="16sp" />
     </LinearLayout>
 </ScrollView>

@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="#4a0072"
     android:orientation="vertical"
     android:paddingLeft="24dp"
-    android:paddingTop="300dp"
+    android:paddingTop="210dp"
     android:paddingRight="24dp"
     tools:context=".view.MainActivity">
 
@@ -14,6 +14,9 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="#ae52d4"
+        android:textColor="@android:color/white"
         android:text="@string/login"
         tools:layout_editor_absoluteY="1dp" />
 
@@ -21,6 +24,8 @@
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#7b1fa2"
+        android:textColor="@android:color/white"
         android:text="@string/register"
         tools:layout_editor_absoluteX="1dp" />
 </LinearLayout>
