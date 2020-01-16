@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7b1fa2"
+    android:orientation="vertical"
     tools:context=".view.DisplayMeetingActivity">
 
     <TextView
@@ -13,6 +14,21 @@
         android:layout_margin="50dp"
         android:ems="20"
         android:textColor="#ffffe4">
-
     </TextView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4a0072"
+        android:text="@string/update_meeting"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffe0b2"
+        android:text="@string/delete_meeting"
+        android:textColor="#4a0072" />
+</LinearLayout>

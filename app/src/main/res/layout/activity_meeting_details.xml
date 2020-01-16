@@ -51,7 +51,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             android:paddingTop="20dp"
             android:paddingBottom="20dp">
@@ -93,14 +93,13 @@
             android:textColor="@android:color/white"
             android:textColorHint="#cbae82" />
 
+
         <Button
             android:id="@+id/buttonCreateMeeting"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:layout_marginBottom="24dp"
             android:background="#4a0072"
-            android:padding="12dp"
             android:text="@string/create_meeting"
             android:textColor="@android:color/white" />
     </LinearLayout>

@@ -26,5 +26,5 @@
         android:background="#4a0072"
         android:ems="10"
         android:text="@string/create_meeting"
-        android:textColor="@android:color/white" />
+        android:textColor="#ffffe4" />
 </LinearLayout>
