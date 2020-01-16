@@ -4,18 +4,20 @@ import java.io.Serializable;
 import java.util.Calendar;
 
 public class Meeting implements Serializable {
-    private Integer id;
+    private String id;
     private String title;
     private String description;
     private Long datetime;
     private String location;
+    private boolean deleted;
+
 
     public String toStringDisplay() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(datetime);
-        return "Title: " + title  +'\n'+
+        return "Title: " + title + '\n' +
                 "Description: " + description + '\n' +
-                "Date and time: " + calendar.getTime() +'\n'+
+                "Date and time: " + calendar.getTime() + '\n' +
                 "Location: " + location + '\n';
     }
 
@@ -30,6 +32,7 @@ public class Meeting implements Serializable {
     public Meeting(String title, String description) {
         this.title = title;
         this.description = description;
+        this.deleted = false;
     }
 
     public Meeting(String title, String description, Long datetime, String location) {
@@ -37,13 +40,14 @@ public class Meeting implements Serializable {
         this.description = description;
         this.datetime = datetime;
         this.location = location;
+        this.deleted = false;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -77,5 +81,13 @@ public class Meeting implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

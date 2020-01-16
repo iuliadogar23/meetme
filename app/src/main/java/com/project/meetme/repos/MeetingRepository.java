@@ -23,18 +23,22 @@ public class MeetingRepository {
         databaseReference.push().setValue(meeting);
     }
 
-    public void update(Integer id, Meeting meeting) {
-        String idStr = id.toString();
+    public void update(String id, Meeting meeting) {
+        String idStr = id;
         databaseReference.child(idStr).setValue(meeting);
     }
 
-    public Meeting findByName(List<Meeting> meetings, String title)
-    {
-        for (Meeting meeting: meetings)
-        {
+    public Meeting findByName(List<Meeting> meetings, String title) {
+        for (Meeting meeting : meetings) {
             if (meeting.getTitle().equals(title))
                 return meeting;
         }
         return null;
     }
+
+    public void deleteMeeting(Meeting meeting) {
+        databaseReference.child(meeting.getTitle()).child("deleted").setValue(true);
+//        meeting.setDeleted(true);
+    }
+
 }
