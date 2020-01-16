@@ -16,7 +16,8 @@
     <ListView
         android:id="@+id/meetingsView"
         android:layout_width="wrap_content"
-        android:layout_height="200dp" />
+        android:layout_height="200dp"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/createMeetingButton"
