@@ -9,4 +9,6 @@
     <string name="date_and_time">Date and time</string>
     <string name="description">Description</string>
     <string name="title">Title</string>
+    <string name="delete_meeting">Delete Meeting</string>
+    <string name="update_meeting">Update Meeting</string>
 </resources>
