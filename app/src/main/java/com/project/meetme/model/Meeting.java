@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 
 public class Meeting implements Serializable {
-    private Integer id;
+    private String id;
     private String title;
     private String description;
     private Long datetime;
@@ -13,9 +13,9 @@ public class Meeting implements Serializable {
     public String toStringDisplay() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(datetime);
-        return "Title: " + title  +'\n'+
+        return "Title: " + title + '\n' +
                 "Description: " + description + '\n' +
-                "Date and time: " + calendar.getTime() +'\n'+
+                "Date and time: " + calendar.getTime() + '\n' +
                 "Location: " + location + '\n';
     }
 
@@ -39,11 +39,11 @@ public class Meeting implements Serializable {
         this.location = location;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

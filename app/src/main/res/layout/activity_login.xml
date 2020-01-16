@@ -10,11 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:paddingLeft="24dp"
-        android:paddingTop="56dp"
         android:paddingRight="24dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="70dp"
+            android:src="@drawable/logo"
+            app:srcCompat="@drawable/logo" />
 
         <!-- Email Label -->
         <EditText
