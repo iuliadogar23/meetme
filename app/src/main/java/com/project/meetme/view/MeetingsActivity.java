@@ -3,7 +3,6 @@ package com.project.meetme.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -63,7 +62,9 @@ public class MeetingsActivity extends AppCompatActivity {
                 meetings.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     meeting = snapshot.getValue(Meeting.class);
-                    meetings.add(meeting);
+                    if (!meeting.getDeleted()) {
+                        meetings.add(meeting);
+                    }
                 }
                 meetingsView.setAdapter(adapter);
             }

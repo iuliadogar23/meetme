@@ -9,6 +9,8 @@ public class Meeting implements Serializable {
     private String description;
     private Long datetime;
     private String location;
+    private boolean deleted;
+
 
     public String toStringDisplay() {
         Calendar calendar = Calendar.getInstance();
@@ -30,6 +32,7 @@ public class Meeting implements Serializable {
     public Meeting(String title, String description) {
         this.title = title;
         this.description = description;
+        this.deleted = false;
     }
 
     public Meeting(String title, String description, Long datetime, String location) {
@@ -37,6 +40,7 @@ public class Meeting implements Serializable {
         this.description = description;
         this.datetime = datetime;
         this.location = location;
+        this.deleted = false;
     }
 
     public String getId() {
@@ -77,5 +81,13 @@ public class Meeting implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public boolean getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

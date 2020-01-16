@@ -64,16 +64,16 @@ public class MeetingDetailsActivity extends AppCompatActivity {
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int year=calendar.get(Calendar.YEAR);
-                int month=calendar.get(Calendar.MONTH);
-                int day=calendar.get(Calendar.DATE);
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DATE);
 
                 DatePickerDialog datePickerDialog = new DatePickerDialog(MeetingDetailsActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-                        month=month+1;
-                        String myDate=dayOfMonth+"/"+month+"/"+year;
+                        month = month + 1;
+                        String myDate = dayOfMonth + "/" + month + "/" + year;
                         returnDate.setYear(year);
                         returnDate.setMonth(month);
                         returnDate.setDate(dayOfMonth);
@@ -96,7 +96,7 @@ public class MeetingDetailsActivity extends AppCompatActivity {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                                String time = hourOfDay+":"+minute;
+                                String time = hourOfDay + ":" + minute;
                                 etTime.setText(time);
                                 returnDate.setHours(hourOfDay);
                                 returnDate.setMinutes(minute);
@@ -116,7 +116,7 @@ public class MeetingDetailsActivity extends AppCompatActivity {
                 final String description = etDescription.getText().toString();
                 final String location = etLocation.getText().toString();
 
-                Meeting meeting = new Meeting(title, description, calendar.getTimeInMillis(), location);
+                Meeting meeting = new Meeting(title, description, returnDate.getTime(), location);
                 meetingRepository.create(meeting);
                 startActivity(new Intent(MeetingDetailsActivity.this, MeetingsActivity.class));
             }
