@@ -29,9 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="select date"
-        android:inputType="datetime"
-        android:focusable="false" />
+        android:focusable="false"
+        android:hint="@string/select_date"
+        android:inputType="datetime" />
 
     <TextView
         android:id="@+id/etTime"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:focusable="false"
-        android:hint="select time"
+        android:hint="@string/select_time"
         android:inputType="datetime" />
 
     <EditText

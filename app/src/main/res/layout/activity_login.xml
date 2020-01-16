@@ -24,6 +24,7 @@
             android:backgroundTint="#ae52d4"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
         <!-- Password Label -->
@@ -34,6 +35,7 @@
             android:backgroundTint="#ae52d4"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
 
         <!-- Login Button -->

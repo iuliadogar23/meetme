@@ -6,4 +6,17 @@
     <string name="register">Register</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="title_meeting_list">Meetings</string>
+    <string name="title_meeting_detail">Meeting Detail</string>
+    <string name="create_meeting">create meeting</string>
+    <string name="save">Save</string>
+    <string name="location">Location</string>
+    <string name="date_and_time">Date and time</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="select_time">Select time</string>
+    <string name="select_date">Select date</string>
+    <string name="first_name_last_name">First name, last name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="sign_up">Sign up</string>
 </resources>
