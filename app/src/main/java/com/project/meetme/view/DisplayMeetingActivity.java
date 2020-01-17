@@ -40,7 +40,8 @@ public class DisplayMeetingActivity extends AppCompatActivity {
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference databaseReference = database.getReference("meetings");
-                databaseReference.child(meeting.getTitle()).removeValue();
+                String mGroupId = databaseReference.push().getKey();
+                databaseReference.child(mGroupId).removeValue();
 
                 meetingRepository.deleteMeeting(meeting);
                 Toast.makeText(v.getContext(), "Meeting " + meeting.getTitle() + " was deleted!", Toast.LENGTH_SHORT);

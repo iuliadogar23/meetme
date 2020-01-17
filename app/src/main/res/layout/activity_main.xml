@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4a0072"
     android:orientation="vertical"
     android:paddingLeft="24dp"
-    android:paddingTop="210dp"
+    android:paddingTop="110dp"
     android:paddingRight="24dp"
     tools:context=".view.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/logo"
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:background="#ae52d4"
-        android:textColor="@android:color/white"
+        android:background="#ffe0b2"
         android:text="@string/login"
+        android:textColor="#4a0072"
         tools:layout_editor_absoluteY="1dp" />
 
     <Button
@@ -25,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#7b1fa2"
-        android:textColor="@android:color/white"
         android:text="@string/register"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="1dp" />
 </LinearLayout>
