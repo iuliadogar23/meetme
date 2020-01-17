@@ -12,7 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "About your accont: \n" +
+        return "About your account: \n" +
                 "Name: " + name + '\n' +
                 "Email: " + email + '\n' +
                 "Password: " + password + '\n' +

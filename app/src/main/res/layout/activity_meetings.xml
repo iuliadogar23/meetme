@@ -16,15 +16,13 @@
     <ListView
         android:id="@+id/meetingsView"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/createMeetingButton"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:background="#4a0072"
         android:ems="10"
         android:text="@string/create_meeting" />
