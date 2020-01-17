@@ -19,8 +19,12 @@
     <string name="first_name_last_name">First name, last name</string>
     <string name="phone_number">Phone number</string>
     <string name="sign_up">Sign up</string>
+    <string name="delete_meeting">Delete Meeting</string>
+    <string name="update_meeting">Update Meeting</string>
+    <string name="todo">TODO</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
     <string name="time">Time</string>
     <string name="date">Date</string>
-    <string name="delete_meeting">Delete</string>
-    <string name="update_meeting">Update</string>
+
 </resources>
