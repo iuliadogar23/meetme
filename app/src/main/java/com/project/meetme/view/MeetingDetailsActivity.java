@@ -1,9 +1,13 @@
 package com.project.meetme.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.DatePickerDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -28,7 +32,7 @@ public class MeetingDetailsActivity extends AppCompatActivity {
 
     MeetingRepository meetingRepository = new MeetingRepository();
     final Calendar myCalendar = Calendar.getInstance();
-
+    int notificationId=0;
     EditText etTitle;
     EditText etDescription;
     TextView etDate;
@@ -118,8 +122,27 @@ public class MeetingDetailsActivity extends AppCompatActivity {
 
                 Meeting meeting = new Meeting(title, description, returnDate.getTime(), location);
                 meetingRepository.create(meeting);
+                addNotification(meeting.getDate().toString(), meeting.getLocation(), meeting.getDate()-2000000);
                 startActivity(new Intent(MeetingDetailsActivity.this, MeetingsActivity.class));
             }
         });
+    }
+
+    private void addNotification(String time, String place, Long notificationTime)
+    {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setContentTitle("MeetMe!")
+                .setContentText("Your meeting will be at "+place+" starting at "+time);
+
+        // Creates the intent needed to show the notification
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        // Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(notificationId, builder.build());
+        notificationId++;
     }
 }

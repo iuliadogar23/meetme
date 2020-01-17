@@ -2,6 +2,7 @@ package com.project.meetme.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 
 public class Meeting implements Serializable {
     private String id;
@@ -13,8 +14,9 @@ public class Meeting implements Serializable {
 
 
     public String toStringDisplay() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(datetime);
+        Date calendar = new Date();
+        calendar.setTime(datetime);
+
         return "Title: " + title + '\n' +
                 "Description: " + description + '\n' +
                 "Date and time: " + calendar.getTime() + '\n' +

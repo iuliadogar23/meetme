@@ -29,6 +29,7 @@ public class MeetingsActivity extends AppCompatActivity {
 
     ListView meetingsView;
     Button createMeetingButton;
+    Button aboutMe;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference("meetings");
     ArrayList<Meeting> meetings;
@@ -44,6 +45,7 @@ public class MeetingsActivity extends AppCompatActivity {
 
         meetingsView = (ListView) findViewById(R.id.meetingsView);
         createMeetingButton = findViewById(R.id.createMeetingButton);
+        aboutMe = findViewById(R.id.about_me);
         meetings = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, meetings);
 
@@ -88,6 +90,13 @@ public class MeetingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MeetingsActivity.this, MeetingDetailsActivity.class));
+            }
+        });
+
+        aboutMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MeetingsActivity.this, ProfileActivity.class));
             }
         });
     }

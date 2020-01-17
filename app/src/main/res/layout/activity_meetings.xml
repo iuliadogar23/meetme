@@ -16,12 +16,21 @@
     <ListView
         android:id="@+id/meetingsView"
         android:layout_width="wrap_content"
-        android:layout_height="200dp" />
+        android:layout_height="184dp">
+
+    </ListView>
 
     <Button
         android:id="@+id/createMeetingButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
         android:ems="10"
         android:text="@string/create_meeting" />
+
+    <Button
+        android:id="@+id/about_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About me" />
+
 </LinearLayout>

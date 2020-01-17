@@ -9,7 +9,6 @@
     <string name="title_meeting_list">Meetings</string>
     <string name="title_meeting_detail">Meeting Detail</string>
     <string name="create_meeting">create meeting</string>
-    <string name="register">Register</string>
     <string name="save">Save</string>
     <string name="location">Location</string>
     <string name="date_and_time">Date and time</string>
@@ -22,4 +21,7 @@
     <string name="sign_up">Sign up</string>
     <string name="delete_meeting">Delete Meeting</string>
     <string name="update_meeting">Update Meeting</string>
+    <string name="todo">TODO</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
 </resources>

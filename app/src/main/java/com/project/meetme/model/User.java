@@ -10,6 +10,15 @@ public class User {
     public User() {
     }
 
+    @Override
+    public String toString() {
+        return "About your accont: \n" +
+                "Name: " + name + '\n' +
+                "Email: " + email + '\n' +
+                "Password: " + password + '\n' +
+                "Phone: " + phone ;
+    }
+
     public User(String name, String email, String password, Long phone) {
         this.name = name;
         this.email = email;
